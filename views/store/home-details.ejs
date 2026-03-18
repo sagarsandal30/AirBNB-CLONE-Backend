@@ -1,0 +1,46 @@
+<%-include('../partial/head')%>
+</head>
+<body >
+    <div class="bg-gray-200 h-screen overflow-y-auto" >
+      <%-include('../partial/header')%>
+       
+   <div class="flex flex-col justify-center items-center  m-20">
+
+    <div class="bg-white h-28 w-200 text-3xl flex justify-center items-center">
+      <h1 class="font-bold ">Here is our  AirBnB Homes Detail Page</h1>    
+    </div>
+
+
+
+    <div class="mt-10">
+        <li class="bg-white shadow-lg rounded-2xl p-5 border border-gray-200 hover:shadow-xl transition duration-300">
+        <div class="flex flex-col justify-center items-center">               
+        <img src="<%= homes.homeImage %>" alt="<%= homes.homeName %>"
+
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">
+        <%= homes.homeName %>
+        </h2>
+      <p class="text-gray-600">
+        📍 <span class="font-medium">Location:</span> <%= homes.homeLocation %>
+      </p>
+
+                          <p class="text-yellow-500 font-semibold">
+        ⭐ Rating: <%= homes.homeRating %>
+      </p>
+                        
+                           <p class="text-green-600 font-bold text-lg mt-2">
+        ₹ <%= homes.homePrice %>
+      </p>
+        </div>
+        <div class="flex justify-center ">
+               <%-include('../partial/favourite')%>
+        </div>
+                
+    </li>
+  </div>
+   </div>
+   
+   </div>
+        
+</body>   
+</html>

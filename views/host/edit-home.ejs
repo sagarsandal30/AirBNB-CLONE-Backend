@@ -1,0 +1,78 @@
+<%-include('../partial/head')%>
+
+</head>
+
+<body class="bg-gray-100   h-screen overflow-y-auto ">
+        <%-include('../partial/header')%>
+<div class="flex justify-center items-center m-20">
+  <div class="bg-white p-8 rounded-xl shadow-lg w-150 top-0 " >
+
+    <h1 class="text-2xl font-bold mb-6 text-center text-gray-700">
+     <%= editing? "Edit": "Register" %> your Home Here
+    </h1>
+
+    <form action= "/host/<%=editing?'edit-home':'add-home'%>" lass="space-y-4" method="POST" >
+
+      <div>
+                
+        <input type="hidden" name="id" value="<%=editing?home.id:'' %>"/>
+        <label class="block text-gray-600 mb-1">House Name</label>
+        <input 
+          type="text" 
+          name="homeName"
+          value="<%=editing?home.homeName:'' %>"
+          placeholder="Enter your House name"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+        <label class="block text-gray-600 mb-1">House Price</label>
+        <input 
+          type="text" 
+          name="price"
+          value="<%=editing?home.price:'' %>"
+          placeholder="Enter your House price"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+        <label class="block text-gray-600 mb-1">House Location</label>
+        <input 
+          type="text" 
+          name="location"
+          value="<%=editing?home.location:'' %>"
+          placeholder="Enter your House Location"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+        <label class="block text-gray-600 mb-1">House Rating</label>
+        <input 
+          type="text" 
+          name="rating"
+          value="<%=editing?home.rating:'' %>"
+          placeholder="Give Rating"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+            <label class="block text-gray-600 mb-1">House Image</label>
+        <input 
+          type="text" 
+          name="homeImage"
+          value="<%=editing?home.homeImage:'' %>"
+          placeholder="Give URL"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+            <label class="block text-gray-600 mb-1">House Description</label>
+        <textarea
+          name="description"
+          placeholder="Give Description"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        ><%=editing?home.description:"" %>
+        </textarea>
+      </div>
+
+      <button  class="w-full bg-red-500 text-white py-2 rounded-lg mt-2.5 hover:bg-blue-600 transition cursor-pointer"
+        type="submit">
+       submit
+        </button>
+     </form>
+
+  </div>
+</div>
+
+</body>
+</html>
